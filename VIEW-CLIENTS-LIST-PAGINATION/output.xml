@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0rc1 (Python 3.9.1 on darwin)" generated="20210404 20:23:02.731" rpa="false">
+<suite id="s1" name="PAGINATION" source="/Users/regina.vitalicio/automation2/python/DAY3_VITALICIO_REGINA/TEST/PAGINATION.robot">
+<test id="s1-t1" name="View List of Clients - Pagination">
+<kw name="Open Browser" library="SELLIB">
+<arg>${MIFOS_LOGIN_PAGE_URL}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210404 20:23:02.893" level="INFO">Opening browser 'chrome' to base url 'https://test.qe-360.com:8443/community-app/#/home'.</msg>
+<status status="PASS" starttime="20210404 20:23:02.892" endtime="20210404 20:23:08.764"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${DEFAULT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210404 20:23:13.766" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210404 20:23:08.765" endtime="20210404 20:23:13.766"/>
+</kw>
+<kw name="Login User" library="MX-PAGE-LOGIN">
+<arg>${INPUT_LOGIN['VALID_USERNAME']}</arg>
+<arg>${INPUT_LOGIN['VALID_PASSWORD']}</arg>
+<kw name="Maximize Browser Window" library="SELLIB">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210404 20:23:13.771" endtime="20210404 20:23:13.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:13.941" endtime="20210404 20:23:15.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:15.085" endtime="20210404 20:23:15.100"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:15.100" endtime="20210404 20:23:15.127"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:15.127" endtime="20210404 20:23:15.132"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:15.132" endtime="20210404 20:23:15.139"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:15.139" endtime="20210404 20:23:15.145"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:15.146" level="INFO">Typing text 'mifos' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20210404 20:23:15.145" endtime="20210404 20:23:15.266"/>
+</kw>
+<kw name="Input Password" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:15.267" level="INFO">Typing password into text field 'id:pwd'.</msg>
+<msg timestamp="20210404 20:23:15.302" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210404 20:23:15.349" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210404 20:23:15.266" endtime="20210404 20:23:15.349"/>
+</kw>
+<kw name="Click Button" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:15.350" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20210404 20:23:15.349" endtime="20210404 20:23:15.401"/>
+</kw>
+<status status="PASS" starttime="20210404 20:23:13.767" endtime="20210404 20:23:15.402"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${SPIELS_LOGIN['VALID_LOGIN_WELCOME_MESSAGE']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:15.402" endtime="20210404 20:23:16.275"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:16.275" endtime="20210404 20:23:16.291"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210404 20:23:16.292" level="INFO">Simulating Mouse Over on element 'xpath://ul[@id='main-menu-left']/li/a[normalize-space(.)='Clients']'.</msg>
+<status status="PASS" starttime="20210404 20:23:16.292" endtime="20210404 20:23:16.562"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:16.563" endtime="20210404 20:23:16.582"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210404 20:23:16.583" level="INFO">Simulating Mouse Over on element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210404 20:23:16.583" endtime="20210404 20:23:16.847"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:16.849" level="INFO">Clicking element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210404 20:23:16.847" endtime="20210404 20:23:16.896"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 20:23:16.896" endtime="20210404 20:23:17.336"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${TEXT_LIST_OF_CLIENTS['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:17.337" endtime="20210404 20:23:17.345"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SYMBOL_LAST_PAGE_NUMBER']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 20:23:17.345" endtime="20210404 20:23:17.561"/>
+</kw>
+<kw name="Get the total number of pages">
+<var>${total_number_of_pages}</var>
+<kw name="Get Text" library="SELLIB">
+<var>${last_page_number}</var>
+<arg>${PAGE_CLIENT['TEXT_LAST_PAGE_NUMBER']}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:17.579" level="INFO">${last_page_number} = 19</msg>
+<status status="PASS" starttime="20210404 20:23:17.562" endtime="20210404 20:23:17.579"/>
+</kw>
+<msg timestamp="20210404 20:23:17.579" level="INFO">${total_number_of_pages} = 19</msg>
+<status status="PASS" starttime="20210404 20:23:17.562" endtime="20210404 20:23:17.579"/>
+</kw>
+<kw name="Click the page number based on parity of last page number">
+<var>${selected_page_number}</var>
+<arg>${total_number_of_pages}</arg>
+<if>
+<branch type="IF" condition="${page_number} % 2 == 0">
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CLIENT['TEXT_FIRST_PAGE_NUMBER']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.580"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${new_page_number}</var>
+<arg>${PAGE_CLIENT['TEXT_FIRST_PAGE_NUMBER']}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.580"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${new_page_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.580"/>
+</kw>
+<status status="NOT RUN" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.580"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CLIENT['TEXT_LAST_PAGE_NUMBER']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:17.581" level="INFO">Clicking element 'xpath://dir-pagination-controls/ul/li[last()-2]/a'.</msg>
+<status status="PASS" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.628"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${new_page_number}</var>
+<arg>${PAGE_CLIENT['TEXT_LAST_PAGE_NUMBER']}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210404 20:23:17.645" level="INFO">${new_page_number} = 19</msg>
+<status status="PASS" starttime="20210404 20:23:17.628" endtime="20210404 20:23:17.645"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${new_page_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210404 20:23:17.645" endtime="20210404 20:23:17.646"/>
+</kw>
+<status status="PASS" starttime="20210404 20:23:17.580" endtime="20210404 20:23:17.646"/>
+</branch>
+<status status="PASS" starttime="20210404 20:23:17.579" endtime="20210404 20:23:17.646"/>
+</if>
+<msg timestamp="20210404 20:23:17.646" level="INFO">${selected_page_number} = 19</msg>
+<status status="PASS" starttime="20210404 20:23:17.579" endtime="20210404 20:23:17.646"/>
+</kw>
+<kw name="Wait until page is finish loading">
+<kw name="Wait Until Element Is Not Visible" library="SELLIB">
+<arg>${COMPONENT_CLIENT['IMAGE_CENTER_LOADER']}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20210404 20:23:17.647" endtime="20210404 20:23:17.886"/>
+</kw>
+<status status="PASS" starttime="20210404 20:23:17.647" endtime="20210404 20:23:17.886"/>
+</kw>
+<kw name="Verify if the page number is selected">
+<arg>${selected_page_number}</arg>
+<kw name="Wait Until Element Contains" library="SELLIB">
+<arg>${PAGE_CLIENT['SELECTED_PAGE_NUMBER']}</arg>
+<arg>${new_page_number}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210404 20:23:17.886" endtime="20210404 20:23:17.904"/>
+</kw>
+<status status="PASS" starttime="20210404 20:23:17.886" endtime="20210404 20:23:17.904"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${selected_page_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210404 20:23:17.905" endtime="20210404 20:23:17.905"/>
+</kw>
+<kw name="Close Browser" library="SELLIB" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210404 20:23:17.905" endtime="20210404 20:23:17.997"/>
+</kw>
+<status status="PASS" starttime="20210404 20:23:02.892" endtime="20210404 20:23:17.997"/>
+</test>
+<status status="PASS" starttime="20210404 20:23:02.733" endtime="20210404 20:23:17.998"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PAGINATION">PAGINATION</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
