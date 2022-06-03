@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0rc1 (Python 3.9.1 on darwin)" generated="20210405 22:21:51.775" rpa="false">
+<suite id="s1" name="CLIENT PAGE 1 FOR IN ZIP LOOP" source="/Users/regina.vitalicio/automation2/python/DAY3_VITALICIO_REGINA/TEST/CLIENT/CLIENT_PAGE_1_FOR_IN_ZIP_LOOP.robot">
+<test id="s1-t1" name="Log Page 1 Client Name And Client Numbers">
+<kw name="Open Browser" library="SELLIB">
+<arg>${MIFOS_LOGIN_PAGE_URL}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210405 22:21:51.938" level="INFO">Opening browser 'chrome' to base url 'https://test.qe-360.com:8443/community-app/#/home'.</msg>
+<status status="PASS" starttime="20210405 22:21:51.938" endtime="20210405 22:22:00.101"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${DEFAULT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210405 22:22:05.103" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210405 22:22:00.102" endtime="20210405 22:22:05.104"/>
+</kw>
+<kw name="Login User" library="MX-PAGE-LOGIN">
+<arg>${INPUT_LOGIN['VALID_USERNAME']}</arg>
+<arg>${INPUT_LOGIN['VALID_PASSWORD']}</arg>
+<kw name="Maximize Browser Window" library="SELLIB">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210405 22:22:05.107" endtime="20210405 22:22:05.318"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:05.318" endtime="20210405 22:22:05.344"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:05.344" endtime="20210405 22:22:05.369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:05.370" endtime="20210405 22:22:05.385"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:05.385" endtime="20210405 22:22:05.390"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:05.391" endtime="20210405 22:22:05.396"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:05.396" endtime="20210405 22:22:05.402"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:05.403" level="INFO">Typing text 'mifos' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20210405 22:22:05.402" endtime="20210405 22:22:05.539"/>
+</kw>
+<kw name="Input Password" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:05.540" level="INFO">Typing password into text field 'id:pwd'.</msg>
+<msg timestamp="20210405 22:22:05.569" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210405 22:22:05.621" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210405 22:22:05.540" endtime="20210405 22:22:05.621"/>
+</kw>
+<kw name="Click Button" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:05.622" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20210405 22:22:05.621" endtime="20210405 22:22:05.683"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:05.104" endtime="20210405 22:22:05.683"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${SPIELS_LOGIN['VALID_LOGIN_WELCOME_MESSAGE']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:05.683" endtime="20210405 22:22:06.326"/>
+</kw>
+<kw name="View Clients Page" library="MX-PAGE-LOGIN">
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:06.327" endtime="20210405 22:22:06.347"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210405 22:22:06.348" level="INFO">Simulating Mouse Over on element 'xpath://ul[@id='main-menu-left']/li/a[normalize-space(.)='Clients']'.</msg>
+<status status="PASS" starttime="20210405 22:22:06.347" endtime="20210405 22:22:06.622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:06.622" endtime="20210405 22:22:06.639"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210405 22:22:06.640" level="INFO">Simulating Mouse Over on element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210405 22:22:06.640" endtime="20210405 22:22:06.904"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:06.906" level="INFO">Clicking element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210405 22:22:06.905" endtime="20210405 22:22:06.949"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:22:06.949" endtime="20210405 22:22:07.179"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${TEXT_LIST_OF_CLIENTS['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:07.179" endtime="20210405 22:22:07.188"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SYMBOL_LAST_PAGE_NUMBER']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:22:07.189" endtime="20210405 22:22:07.618"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:06.327" endtime="20210405 22:22:07.618"/>
+</kw>
+<kw name="Get Client Name Locators">
+<var>${client_name_locators}</var>
+<kw name="Get WebElements" library="SELLIB">
+<var>${client_name_elements}</var>
+<arg>${PAGE_CLIENT['DATA_CLIENT_NAME']}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.631" level="INFO">${client_name_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="44bdd50d-f682-4ad5-bf6d-c6d45eee873a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:22:07.619" endtime="20210405 22:22:07.631"/>
+</kw>
+<msg timestamp="20210405 22:22:07.631" level="INFO">${client_name_locators} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="44bdd50d-f682-4ad5-bf6d-c6d45eee873a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:22:07.619" endtime="20210405 22:22:07.631"/>
+</kw>
+<kw name="Get Client Number Locators">
+<var>${client_num_locators}</var>
+<kw name="Get WebElements" library="SELLIB">
+<var>${client_num_elements}</var>
+<arg>${PAGE_CLIENT['DATA_CLIENT_NUMBER']}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.643" level="INFO">${client_num_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="94331e25-43db-40b5-a186-3cc04216f1f6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:22:07.631" endtime="20210405 22:22:07.643"/>
+</kw>
+<msg timestamp="20210405 22:22:07.643" level="INFO">${client_num_locators} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="94331e25-43db-40b5-a186-3cc04216f1f6")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:22:07.631" endtime="20210405 22:22:07.643"/>
+</kw>
+<kw name="Log To Console The Page 1 Client Name And Client Numbers">
+<arg>${client_num_locators}</arg>
+<arg>${client_name_locators}</arg>
+<for flavor="IN ZIP">
+<var>${client_num_element}</var>
+<var>${client_name_element}</var>
+<value>${client_num_elements}</value>
+<value>${client_name_elements}</value>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="94331e25-43db-40b5-a186-3cc04216f1f6")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="44bdd50d-f682-4ad5-bf6d-c6d45eee873a")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.653" level="INFO">${client_number} = 000000016</msg>
+<status status="PASS" starttime="20210405 22:22:07.644" endtime="20210405 22:22:07.653"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.662" level="INFO">${client_name} = Devin Shane Carter</msg>
+<status status="PASS" starttime="20210405 22:22:07.653" endtime="20210405 22:22:07.662"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.662" level="INFO">Client #: 000000016 | Client Name: Devin Shane Carter</msg>
+<status status="PASS" starttime="20210405 22:22:07.662" endtime="20210405 22:22:07.662"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.644" endtime="20210405 22:22:07.662"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="678848f5-48d8-46fd-94ef-c1fa8a0a1a71")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="7b487a28-0b0f-49cf-8f95-9547dd016929")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.671" level="INFO">${client_number} = 000000014</msg>
+<status status="PASS" starttime="20210405 22:22:07.663" endtime="20210405 22:22:07.671"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.680" level="INFO">${client_name} = Fernando Jose Gray</msg>
+<status status="PASS" starttime="20210405 22:22:07.672" endtime="20210405 22:22:07.680"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.680" level="INFO">Client #: 000000014 | Client Name: Fernando Jose Gray</msg>
+<status status="PASS" starttime="20210405 22:22:07.680" endtime="20210405 22:22:07.680"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.663" endtime="20210405 22:22:07.680"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="b9722e84-1f73-4b14-9cd6-f41727b49b29")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="2dcb212e-248f-42ae-87f0-a96653373c4c")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.689" level="INFO">${client_number} = 000000015</msg>
+<status status="PASS" starttime="20210405 22:22:07.681" endtime="20210405 22:22:07.689"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.698" level="INFO">${client_name} = George Evan James</msg>
+<status status="PASS" starttime="20210405 22:22:07.689" endtime="20210405 22:22:07.698"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.698" level="INFO">Client #: 000000015 | Client Name: George Evan James</msg>
+<status status="PASS" starttime="20210405 22:22:07.698" endtime="20210405 22:22:07.698"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.681" endtime="20210405 22:22:07.698"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="b304a00a-3aa7-4a55-8ac9-1275540b4d7b")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="eddd3f29-6163-4952-9534-cddde9262fe0")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.707" level="INFO">${client_number} = 000000003</msg>
+<status status="PASS" starttime="20210405 22:22:07.698" endtime="20210405 22:22:07.707"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.715" level="INFO">${client_name} = John Kennedy</msg>
+<status status="PASS" starttime="20210405 22:22:07.707" endtime="20210405 22:22:07.715"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.716" level="INFO">Client #: 000000003 | Client Name: John Kennedy</msg>
+<status status="PASS" starttime="20210405 22:22:07.715" endtime="20210405 22:22:07.716"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.698" endtime="20210405 22:22:07.716"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="2d4d01e3-481b-40ae-b603-4d87c507dc2f")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="6bdb1aa5-c5f8-4024-b4ab-872b1fd278c1")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.724" level="INFO">${client_number} = 000000011</msg>
+<status status="PASS" starttime="20210405 22:22:07.716" endtime="20210405 22:22:07.724"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.733" level="INFO">${client_name} = Michael William Gomez</msg>
+<status status="PASS" starttime="20210405 22:22:07.725" endtime="20210405 22:22:07.733"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.733" level="INFO">Client #: 000000011 | Client Name: Michael William Gomez</msg>
+<status status="PASS" starttime="20210405 22:22:07.733" endtime="20210405 22:22:07.733"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.716" endtime="20210405 22:22:07.733"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="b06c6fe1-78d3-4fe6-af36-b90ee5254391")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="02e7055c-c22f-4993-acf6-d774268dfc90")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.742" level="INFO">${client_number} = 000000008</msg>
+<status status="PASS" starttime="20210405 22:22:07.734" endtime="20210405 22:22:07.742"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.750" level="INFO">${client_name} = Nyker King</msg>
+<status status="PASS" starttime="20210405 22:22:07.742" endtime="20210405 22:22:07.750"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.751" level="INFO">Client #: 000000008 | Client Name: Nyker King</msg>
+<status status="PASS" starttime="20210405 22:22:07.751" endtime="20210405 22:22:07.751"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.733" endtime="20210405 22:22:07.751"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="aaa5bdff-22ce-40d5-bcd4-011162ca3c63")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="d048a84b-94cc-4061-b0d3-b62ec0b8b35c")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.760" level="INFO">${client_number} = 000000006</msg>
+<status status="PASS" starttime="20210405 22:22:07.751" endtime="20210405 22:22:07.760"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.768" level="INFO">${client_name} = Rekyn 2 Gnik 2</msg>
+<status status="PASS" starttime="20210405 22:22:07.760" endtime="20210405 22:22:07.768"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.769" level="INFO">Client #: 000000006 | Client Name: Rekyn 2 Gnik 2</msg>
+<status status="PASS" starttime="20210405 22:22:07.768" endtime="20210405 22:22:07.769"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.751" endtime="20210405 22:22:07.769"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="d4021cbe-9074-4cb9-9310-a4c33d33d9e2")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="6fa319a5-8fec-4247-bc68-0d490843c23f")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.777" level="INFO">${client_number} = 000000009</msg>
+<status status="PASS" starttime="20210405 22:22:07.769" endtime="20210405 22:22:07.777"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.786" level="INFO">${client_name} = Rekyn 4 Gnik 4</msg>
+<status status="PASS" starttime="20210405 22:22:07.777" endtime="20210405 22:22:07.786"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.786" level="INFO">Client #: 000000009 | Client Name: Rekyn 4 Gnik 4</msg>
+<status status="PASS" starttime="20210405 22:22:07.786" endtime="20210405 22:22:07.786"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.769" endtime="20210405 22:22:07.786"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="bd9771a9-e4cc-4ed4-932a-1f872cc112b3")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="18d81c27-188d-4111-87e0-5dbccf931ac1")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.797" level="INFO">${client_number} = 000000002</msg>
+<status status="PASS" starttime="20210405 22:22:07.786" endtime="20210405 22:22:07.797"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.805" level="INFO">${client_name} = Rekyn Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.797" endtime="20210405 22:22:07.805"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.805" level="INFO">Client #: 000000002 | Client Name: Rekyn Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.805" endtime="20210405 22:22:07.806"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.786" endtime="20210405 22:22:07.806"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="4ee89314-8e4e-4101-8726-8f1c9dc5ec9b")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="4a60bd21-1c8f-43fb-a4ed-56e984d94181")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.814" level="INFO">${client_number} = 000000017</msg>
+<status status="PASS" starttime="20210405 22:22:07.806" endtime="20210405 22:22:07.814"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.823" level="INFO">${client_name} = Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.814" endtime="20210405 22:22:07.823"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.823" level="INFO">Client #: 000000017 | Client Name: Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.823" endtime="20210405 22:22:07.823"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.806" endtime="20210405 22:22:07.823"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="95596bf2-efa4-4f3b-bcbb-c26c89e3b03b")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="14b63754-76de-44f0-87ec-9794d64b9418")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.832" level="INFO">${client_number} = 000000022</msg>
+<status status="PASS" starttime="20210405 22:22:07.824" endtime="20210405 22:22:07.832"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.840" level="INFO">${client_name} = Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.832" endtime="20210405 22:22:07.840"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.841" level="INFO">Client #: 000000022 | Client Name: Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.841" endtime="20210405 22:22:07.841"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.823" endtime="20210405 22:22:07.841"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="bf26badd-306a-4b90-b2af-4ee692a5b512")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="d52b9441-58e8-421f-8856-d059cf76b5f1")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.850" level="INFO">${client_number} = 000000023</msg>
+<status status="PASS" starttime="20210405 22:22:07.841" endtime="20210405 22:22:07.850"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.858" level="INFO">${client_name} = Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.850" endtime="20210405 22:22:07.858"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.859" level="INFO">Client #: 000000023 | Client Name: Rekyn Yodel Gnik</msg>
+<status status="PASS" starttime="20210405 22:22:07.858" endtime="20210405 22:22:07.859"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.841" endtime="20210405 22:22:07.859"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="7221c7d5-b393-4c9d-9aeb-08e87360561b")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="7f7f0e13-811b-4026-ba13-29f4d51e59d6")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.867" level="INFO">${client_number} = 000000010</msg>
+<status status="PASS" starttime="20210405 22:22:07.859" endtime="20210405 22:22:07.867"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.876" level="INFO">${client_name} = Rekyn+1616121788900 Gnik+1616121788900</msg>
+<status status="PASS" starttime="20210405 22:22:07.868" endtime="20210405 22:22:07.876"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.876" level="INFO">Client #: 000000010 | Client Name: Rekyn+1616121788900 Gnik+1616121788900</msg>
+<status status="PASS" starttime="20210405 22:22:07.876" endtime="20210405 22:22:07.877"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.859" endtime="20210405 22:22:07.877"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="e34f8224-6c36-4ae4-82d3-3b4c59a46370")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="126a2314-d141-46e9-aa7c-03ea6bb0d907")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.885" level="INFO">${client_number} = 000000018</msg>
+<status status="PASS" starttime="20210405 22:22:07.877" endtime="20210405 22:22:07.885"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.894" level="INFO">${client_name} = Shannon James Nielsen</msg>
+<status status="PASS" starttime="20210405 22:22:07.885" endtime="20210405 22:22:07.894"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.894" level="INFO">Client #: 000000018 | Client Name: Shannon James Nielsen</msg>
+<status status="PASS" starttime="20210405 22:22:07.894" endtime="20210405 22:22:07.894"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.877" endtime="20210405 22:22:07.895"/>
+</iter>
+<iter>
+<var name="${client_num_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="99365eb1-2909-4307-8325-a75cd4529ae6")&gt;</var>
+<var name="${client_name_element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb8a6f3c1c368c023468aa8322ce6088", element="989e06a5-2aea-41a7-b1bf-364fd48e0be9")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${client_num_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.903" level="INFO">${client_number} = 000000001</msg>
+<status status="PASS" starttime="20210405 22:22:07.895" endtime="20210405 22:22:07.903"/>
+</kw>
+<kw name="Get Text" library="SELLIB">
+<var>${client_name}</var>
+<arg>${client_name_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:22:07.912" level="INFO">${client_name} = test test test</msg>
+<status status="PASS" starttime="20210405 22:22:07.903" endtime="20210405 22:22:07.912"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Client #: ${client_number} | Client Name: ${client_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210405 22:22:07.912" level="INFO">Client #: 000000001 | Client Name: test test test</msg>
+<status status="PASS" starttime="20210405 22:22:07.912" endtime="20210405 22:22:07.912"/>
+</kw>
+<status status="PASS" starttime="20210405 22:22:07.895" endtime="20210405 22:22:07.912"/>
+</iter>
+<status status="PASS" starttime="20210405 22:22:07.644" endtime="20210405 22:22:07.912"/>
+</for>
+<status status="PASS" starttime="20210405 22:22:07.643" endtime="20210405 22:22:07.913"/>
+</kw>
+<kw name="Close Browser" library="SELLIB" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210405 22:22:07.913" endtime="20210405 22:22:08.006"/>
+</kw>
+<status status="PASS" starttime="20210405 22:21:51.937" endtime="20210405 22:22:08.006"/>
+</test>
+<status status="PASS" starttime="20210405 22:21:51.778" endtime="20210405 22:22:08.007"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CLIENT PAGE 1 FOR IN ZIP LOOP">CLIENT PAGE 1 FOR IN ZIP LOOP</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
