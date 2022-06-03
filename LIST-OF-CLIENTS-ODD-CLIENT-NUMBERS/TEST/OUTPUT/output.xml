@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0rc1 (Python 3.9.1 on darwin)" generated="20210405 22:55:19.951" rpa="false">
+<suite id="s1" name="CLIENT PAGE 1 LOG ODD NUMBER CLIENT NUMBERS" source="/Users/regina.vitalicio/automation2/python/DAY3_VITALICIO_REGINA/TEST/CLIENT/CLIENT_PAGE_1_LOG_ODD_NUMBER_CLIENT_NUMBERS.robot">
+<test id="s1-t1" name="Log To Console The Odd Client Numbers in Page 1">
+<kw name="Open Browser" library="SELLIB">
+<arg>${MIFOS_LOGIN_PAGE_URL}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210405 22:55:20.318" level="INFO">Opening browser 'chrome' to base url 'https://test.qe-360.com:8443/community-app/#/home'.</msg>
+<status status="PASS" starttime="20210405 22:55:20.317" endtime="20210405 22:55:29.550"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${DEFAULT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210405 22:55:34.552" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210405 22:55:29.550" endtime="20210405 22:55:34.553"/>
+</kw>
+<kw name="Login User" library="MX-PAGE-LOGIN">
+<arg>${INPUT_LOGIN['VALID_USERNAME']}</arg>
+<arg>${INPUT_LOGIN['VALID_PASSWORD']}</arg>
+<kw name="Maximize Browser Window" library="SELLIB">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210405 22:55:34.556" endtime="20210405 22:55:34.687"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:34.687" endtime="20210405 22:55:35.375"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:35.375" endtime="20210405 22:55:35.390"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:35.390" endtime="20210405 22:55:35.410"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:35.411" endtime="20210405 22:55:35.419"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:35.419" endtime="20210405 22:55:35.424"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:35.424" endtime="20210405 22:55:35.430"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:35.431" level="INFO">Typing text 'mifos' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20210405 22:55:35.430" endtime="20210405 22:55:35.566"/>
+</kw>
+<kw name="Input Password" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:35.568" level="INFO">Typing password into text field 'id:pwd'.</msg>
+<msg timestamp="20210405 22:55:35.601" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210405 22:55:35.651" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210405 22:55:35.567" endtime="20210405 22:55:35.651"/>
+</kw>
+<kw name="Click Button" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:35.652" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20210405 22:55:35.651" endtime="20210405 22:55:35.702"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:34.553" endtime="20210405 22:55:35.702"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${SPIELS_LOGIN['VALID_LOGIN_WELCOME_MESSAGE']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:35.702" endtime="20210405 22:55:36.138"/>
+</kw>
+<kw name="View Clients Page" library="MX-PAGE-LOGIN">
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:36.139" endtime="20210405 22:55:36.162"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['TOP_MENU_CLIENTS']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210405 22:55:36.163" level="INFO">Simulating Mouse Over on element 'xpath://ul[@id='main-menu-left']/li/a[normalize-space(.)='Clients']'.</msg>
+<status status="PASS" starttime="20210405 22:55:36.162" endtime="20210405 22:55:36.456"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:36.456" endtime="20210405 22:55:36.473"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210405 22:55:36.474" level="INFO">Simulating Mouse Over on element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210405 22:55:36.473" endtime="20210405 22:55:36.737"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SUB_MENU_CLIENTS_LINK']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:36.739" level="INFO">Clicking element 'xpath://a[@href='#/clients']'.</msg>
+<status status="PASS" starttime="20210405 22:55:36.738" endtime="20210405 22:55:36.788"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CLIENT['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210405 22:55:36.788" endtime="20210405 22:55:37.014"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${TEXT_LIST_OF_CLIENTS['TITLE_LIST_OF_CLIENTS']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:37.014" endtime="20210405 22:55:37.023"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_CLIENT['SYMBOL_LAST_PAGE_NUMBER']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210405 22:55:37.023" endtime="20210405 22:55:37.448"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:36.138" endtime="20210405 22:55:37.448"/>
+</kw>
+<kw name="Get Client Number Locators">
+<var>${locators}</var>
+<kw name="Get WebElements" library="SELLIB">
+<var>${elements}</var>
+<arg>${PAGE_CLIENT['DATA_CLIENT_NUMBER']}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.465" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="1e1939c3-2657-47f8-b71a-f0c2b35258bc")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:55:37.449" endtime="20210405 22:55:37.465"/>
+</kw>
+<msg timestamp="20210405 22:55:37.465" level="INFO">${locators} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="1e1939c3-2657-47f8-b71a-f0c2b35258bc")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210405 22:55:37.448" endtime="20210405 22:55:37.465"/>
+</kw>
+<kw name="Log To Console the Page 1 Odd Client Numbers">
+<arg>${locators}</arg>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="1e1939c3-2657-47f8-b71a-f0c2b35258bc")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.479" level="INFO">${client_number} = 000000016</msg>
+<status status="PASS" starttime="20210405 22:55:37.467" endtime="20210405 22:55:37.479"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.479" level="INFO">${integer} = 16</msg>
+<status status="PASS" starttime="20210405 22:55:37.479" endtime="20210405 22:55:37.479"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.480" endtime="20210405 22:55:37.480"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.479" endtime="20210405 22:55:37.480"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.479" endtime="20210405 22:55:37.480"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.466" endtime="20210405 22:55:37.480"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="0cc8c426-97db-4eff-a883-95f7dda35f80")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.492" level="INFO">${client_number} = 000000014</msg>
+<status status="PASS" starttime="20210405 22:55:37.480" endtime="20210405 22:55:37.492"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.492" level="INFO">${integer} = 14</msg>
+<status status="PASS" starttime="20210405 22:55:37.492" endtime="20210405 22:55:37.492"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.493" endtime="20210405 22:55:37.493"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.493" endtime="20210405 22:55:37.493"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.492" endtime="20210405 22:55:37.493"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.480" endtime="20210405 22:55:37.493"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="ddd903e8-93e9-4d89-9409-581c48ad1f57")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.505" level="INFO">${client_number} = 000000015</msg>
+<status status="PASS" starttime="20210405 22:55:37.493" endtime="20210405 22:55:37.505"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.505" level="INFO">${integer} = 15</msg>
+<status status="PASS" starttime="20210405 22:55:37.505" endtime="20210405 22:55:37.505"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.506" endtime="20210405 22:55:37.506"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.505" endtime="20210405 22:55:37.506"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.505" endtime="20210405 22:55:37.506"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.493" endtime="20210405 22:55:37.506"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="bdd1a607-85d4-4d90-820d-a4ccfad162c7")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.515" level="INFO">${client_number} = 000000003</msg>
+<status status="PASS" starttime="20210405 22:55:37.506" endtime="20210405 22:55:37.515"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.516" level="INFO">${integer} = 3</msg>
+<status status="PASS" starttime="20210405 22:55:37.515" endtime="20210405 22:55:37.516"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.516" endtime="20210405 22:55:37.516"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.516" endtime="20210405 22:55:37.516"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.516" endtime="20210405 22:55:37.516"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.506" endtime="20210405 22:55:37.517"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="7683ad9c-fdd9-4357-b6cd-0586ee085e61")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.526" level="INFO">${client_number} = 000000011</msg>
+<status status="PASS" starttime="20210405 22:55:37.517" endtime="20210405 22:55:37.526"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.526" level="INFO">${integer} = 11</msg>
+<status status="PASS" starttime="20210405 22:55:37.526" endtime="20210405 22:55:37.526"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.526" endtime="20210405 22:55:37.527"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.526" endtime="20210405 22:55:37.527"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.526" endtime="20210405 22:55:37.527"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.517" endtime="20210405 22:55:37.527"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="d2aa1d5e-e787-4a7a-833b-5394e7d2fd02")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.536" level="INFO">${client_number} = 000000008</msg>
+<status status="PASS" starttime="20210405 22:55:37.527" endtime="20210405 22:55:37.536"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.536" level="INFO">${integer} = 8</msg>
+<status status="PASS" starttime="20210405 22:55:37.536" endtime="20210405 22:55:37.536"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.537" endtime="20210405 22:55:37.537"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.536" endtime="20210405 22:55:37.537"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.536" endtime="20210405 22:55:37.537"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.527" endtime="20210405 22:55:37.537"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="592f5f60-6c63-4477-88d4-89b72db959b6")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.546" level="INFO">${client_number} = 000000006</msg>
+<status status="PASS" starttime="20210405 22:55:37.537" endtime="20210405 22:55:37.546"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.546" level="INFO">${integer} = 6</msg>
+<status status="PASS" starttime="20210405 22:55:37.546" endtime="20210405 22:55:37.546"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.546" endtime="20210405 22:55:37.547"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.546" endtime="20210405 22:55:37.547"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.546" endtime="20210405 22:55:37.547"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.537" endtime="20210405 22:55:37.547"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="aa6e6878-a88a-4bc6-9952-9414485bc35a")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.558" level="INFO">${client_number} = 000000009</msg>
+<status status="PASS" starttime="20210405 22:55:37.547" endtime="20210405 22:55:37.559"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.559" level="INFO">${integer} = 9</msg>
+<status status="PASS" starttime="20210405 22:55:37.559" endtime="20210405 22:55:37.559"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.559" endtime="20210405 22:55:37.560"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.559" endtime="20210405 22:55:37.560"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.559" endtime="20210405 22:55:37.560"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.547" endtime="20210405 22:55:37.560"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="09e58635-c1d2-4a12-a5fe-94eeb5d4a166")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.569" level="INFO">${client_number} = 000000002</msg>
+<status status="PASS" starttime="20210405 22:55:37.560" endtime="20210405 22:55:37.569"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.570" level="INFO">${integer} = 2</msg>
+<status status="PASS" starttime="20210405 22:55:37.569" endtime="20210405 22:55:37.570"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.570" endtime="20210405 22:55:37.570"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.570" endtime="20210405 22:55:37.570"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.570" endtime="20210405 22:55:37.570"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.560" endtime="20210405 22:55:37.570"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="c3ae0307-73da-4746-b576-2ed397b4bb18")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.579" level="INFO">${client_number} = 000000017</msg>
+<status status="PASS" starttime="20210405 22:55:37.570" endtime="20210405 22:55:37.579"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.579" level="INFO">${integer} = 17</msg>
+<status status="PASS" starttime="20210405 22:55:37.579" endtime="20210405 22:55:37.579"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.580" endtime="20210405 22:55:37.581"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.580" endtime="20210405 22:55:37.581"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.580" endtime="20210405 22:55:37.581"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.570" endtime="20210405 22:55:37.581"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="412add1c-0b98-4320-be05-0a53c3674cd9")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.590" level="INFO">${client_number} = 000000022</msg>
+<status status="PASS" starttime="20210405 22:55:37.581" endtime="20210405 22:55:37.590"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.591" level="INFO">${integer} = 22</msg>
+<status status="PASS" starttime="20210405 22:55:37.590" endtime="20210405 22:55:37.591"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.591" endtime="20210405 22:55:37.591"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.591" endtime="20210405 22:55:37.591"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.591" endtime="20210405 22:55:37.591"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.581" endtime="20210405 22:55:37.591"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="2a2fe8f2-3230-496c-9220-692e96b40d9b")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.602" level="INFO">${client_number} = 000000023</msg>
+<status status="PASS" starttime="20210405 22:55:37.591" endtime="20210405 22:55:37.602"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.602" level="INFO">${integer} = 23</msg>
+<status status="PASS" starttime="20210405 22:55:37.602" endtime="20210405 22:55:37.602"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.603" endtime="20210405 22:55:37.603"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.602" endtime="20210405 22:55:37.603"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.602" endtime="20210405 22:55:37.603"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.591" endtime="20210405 22:55:37.603"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="37bcb075-f38e-44ca-adef-72b07f52d9b8")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.612" level="INFO">${client_number} = 000000010</msg>
+<status status="PASS" starttime="20210405 22:55:37.603" endtime="20210405 22:55:37.612"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.612" level="INFO">${integer} = 10</msg>
+<status status="PASS" starttime="20210405 22:55:37.612" endtime="20210405 22:55:37.612"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.612" endtime="20210405 22:55:37.613"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.612" endtime="20210405 22:55:37.613"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.612" endtime="20210405 22:55:37.613"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.603" endtime="20210405 22:55:37.613"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="c24d6778-20ef-408e-9503-532f9e303dfe")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.622" level="INFO">${client_number} = 000000018</msg>
+<status status="PASS" starttime="20210405 22:55:37.613" endtime="20210405 22:55:37.622"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.623" level="INFO">${integer} = 18</msg>
+<status status="PASS" starttime="20210405 22:55:37.622" endtime="20210405 22:55:37.623"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210405 22:55:37.623" endtime="20210405 22:55:37.623"/>
+</kw>
+<status status="NOT RUN" starttime="20210405 22:55:37.623" endtime="20210405 22:55:37.623"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.623" endtime="20210405 22:55:37.623"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.613" endtime="20210405 22:55:37.623"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="99c48b21f1d50ee97e6726e9af2e5c6e", element="3cca5b42-6b6c-48c5-b2cf-3ca29cef3fb0")&gt;</var>
+<kw name="Get Text" library="SELLIB">
+<var>${client_number}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210405 22:55:37.632" level="INFO">${client_number} = 000000001</msg>
+<status status="PASS" starttime="20210405 22:55:37.623" endtime="20210405 22:55:37.632"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${integer}</var>
+<arg>${client_number}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210405 22:55:37.632" level="INFO">${integer} = 1</msg>
+<status status="PASS" starttime="20210405 22:55:37.632" endtime="20210405 22:55:37.632"/>
+</kw>
+<if>
+<branch type="IF" condition="${integer} % 2 != 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${client_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210405 22:55:37.633" endtime="20210405 22:55:37.633"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:37.633" endtime="20210405 22:55:37.633"/>
+</branch>
+<status status="PASS" starttime="20210405 22:55:37.632" endtime="20210405 22:55:37.633"/>
+</if>
+<status status="PASS" starttime="20210405 22:55:37.623" endtime="20210405 22:55:37.633"/>
+</iter>
+<status status="PASS" starttime="20210405 22:55:37.466" endtime="20210405 22:55:37.633"/>
+</for>
+<status status="PASS" starttime="20210405 22:55:37.466" endtime="20210405 22:55:37.633"/>
+</kw>
+<kw name="Close Browser" library="SELLIB" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210405 22:55:37.634" endtime="20210405 22:55:37.730"/>
+</kw>
+<status status="PASS" starttime="20210405 22:55:20.317" endtime="20210405 22:55:37.731"/>
+</test>
+<status status="PASS" starttime="20210405 22:55:19.952" endtime="20210405 22:55:37.733"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CLIENT PAGE 1 LOG ODD NUMBER CLIENT NUMBERS">CLIENT PAGE 1 LOG ODD NUMBER CLIENT NUMBERS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

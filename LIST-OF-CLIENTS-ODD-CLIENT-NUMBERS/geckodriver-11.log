@@ -1,0 +1,8 @@
+1617536959504	geckodriver	INFO	Listening on 127.0.0.1:61349
+1617536960454	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5c/jv_3vcz95fxcd9r74hhmfxzwnk7d8g/T/rust_mozprofile2uuewM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617536962475	Marionette	INFO	Listening on port 61364
+1617536962532	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://test.qe-360.com:8443/community-app/bower_components/requirejs/require.js, line 168: Error: Load timeout for modules: Q,mifosX,angular,angular-route,angular-resource,angular-translate,angular-translate-loader-static-files,angularui,angularuitpls,webstorage,nvd3ChartDirectives,notificationWidget,angularFileUpload,modified.datepicker,ngSanitize,ckEditor,ngIdle,configurations,LocalStorageModule,ngCsv,frAngular,tmh.dynamicLocale,angular-wizard,webcam-directive,angular-utils-pagination,ng-scrollbar,nvd3,css/css!styles/styles.985bbaad.css_unnormalized3,css/css!styles/styles.985bbaad
+http://requirejs.org/docs/errors.html#timeout
+1617537011464	Marionette	INFO	Stopped listening on port 61364
