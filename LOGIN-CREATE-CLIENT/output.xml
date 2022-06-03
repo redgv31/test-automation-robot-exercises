@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0rc1 (Python 3.9.1 on darwin)" generated="20210404 04:56:50.789" rpa="false">
+<suite id="s1" name="CLIENT" source="/Users/regina.vitalicio/automation2/python/DAY3_VITALICIO_REGINA/TEST/CLIENT/CLIENT.robot">
+<test id="s1-t1" name="Valid Client Creation">
+<kw name="Create Client Template">
+<arg>${VALID_INPUT_CLIENT_INFO['FIRSTNAME']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['MIDDLENAME']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['LASTNAME']}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VIEW_CLIENT_URL}</arg>
+<arg>${PAGE_CLIENT['TITLE_VIEW_CLIENT']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['FIRSTNAME']} ${VALID_INPUT_CLIENT_INFO['MIDDLENAME']} ${VALID_INPUT_CLIENT_INFO['LASTNAME']}</arg>
+<kw name="Open Browser" library="SELLIB">
+<arg>${MIFOS_LOGIN_PAGE_URL}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210404 04:56:50.955" level="INFO">Opening browser 'chrome' to base url 'https://test.qe-360.com:8443/community-app/#/home'.</msg>
+<status status="PASS" starttime="20210404 04:56:50.955" endtime="20210404 04:56:54.817"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${DEFAULT_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210404 04:56:59.823" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210404 04:56:54.817" endtime="20210404 04:56:59.823"/>
+</kw>
+<kw name="Login User" library="MX-PAGE-LOGIN">
+<arg>${INPUT_LOGIN['VALID_USERNAME']}</arg>
+<arg>${INPUT_LOGIN['VALID_PASSWORD']}</arg>
+<kw name="Maximize Browser Window" library="SELLIB">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210404 04:56:59.827" endtime="20210404 04:57:00.033"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:00.033" endtime="20210404 04:57:00.062"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:00.063" endtime="20210404 04:57:00.080"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:00.080" endtime="20210404 04:57:00.094"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 04:57:00.095" endtime="20210404 04:57:00.100"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 04:57:00.100" endtime="20210404 04:57:00.106"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 04:57:00.107" endtime="20210404 04:57:00.113"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_USERNAME']}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:00.114" level="INFO">Typing text 'mifos' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20210404 04:57:00.113" endtime="20210404 04:57:00.206"/>
+</kw>
+<kw name="Input Password" library="SELLIB">
+<arg>${PAGE_LOGIN['TEXTBOX_PASSWORD']}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:00.207" level="INFO">Typing password into text field 'id:pwd'.</msg>
+<msg timestamp="20210404 04:57:00.237" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210404 04:57:00.285" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210404 04:57:00.206" endtime="20210404 04:57:00.285"/>
+</kw>
+<kw name="Click Button" library="SELLIB">
+<arg>${PAGE_LOGIN['BUTTON_LOGIN']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:00.288" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20210404 04:57:00.286" endtime="20210404 04:57:00.359"/>
+</kw>
+<status status="PASS" starttime="20210404 04:56:59.824" endtime="20210404 04:57:00.360"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SELLIB">
+<arg>${SPIELS_LOGIN['VALID_LOGIN_WELCOME_MESSAGE']}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210404 04:57:00.360" endtime="20210404 04:57:00.584"/>
+</kw>
+<if>
+<branch type="IF" condition="'${mobile_number}' == '${EMPTY}'">
+<kw name="Generate Random Mobile Number" library="MX_INPUT_RANDOM_MOBILE">
+<var>${mobile_number}</var>
+<kw name="Generate Random String" library="String">
+<var>${RANDOM_MOBILE}</var>
+<arg>11</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20210404 04:57:00.586" level="INFO">${RANDOM_MOBILE} = 52686739140</msg>
+<status status="PASS" starttime="20210404 04:57:00.586" endtime="20210404 04:57:00.586"/>
+</kw>
+<msg timestamp="20210404 04:57:00.586" level="INFO">${mobile_number} = 52686739140</msg>
+<status status="PASS" starttime="20210404 04:57:00.585" endtime="20210404 04:57:00.586"/>
+</kw>
+<status status="PASS" starttime="20210404 04:57:00.585" endtime="20210404 04:57:00.586"/>
+</branch>
+<status status="PASS" starttime="20210404 04:57:00.584" endtime="20210404 04:57:00.586"/>
+</if>
+<kw name="Create Client" library="MX-PAGE-LOGIN">
+<arg>${firstname}</arg>
+<arg>${middlename}</arg>
+<arg>${lastname}</arg>
+<arg>${mobile_number}</arg>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${COMPONENT_SIDE_BAR_CLIENT['LINK_CREATE_CLIENT']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:00.587" endtime="20210404 04:57:00.610"/>
+</kw>
+<kw name="Mouse Over" library="SELLIB">
+<arg>${COMPONENT_SIDE_BAR_CLIENT['LINK_CREATE_CLIENT']}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210404 04:57:00.612" level="INFO">Simulating Mouse Over on element 'xpath://*[@id='mifos-reskin-side-nav']//a/span[normalize-space(.)='Client']'.</msg>
+<status status="PASS" starttime="20210404 04:57:00.610" endtime="20210404 04:57:00.894"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${COMPONENT_SIDE_BAR_CLIENT['LINK_CREATE_CLIENT']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:00.896" level="INFO">Clicking element 'xpath://*[@id='mifos-reskin-side-nav']//a/span[normalize-space(.)='Client']'.</msg>
+<status status="PASS" starttime="20210404 04:57:00.895" endtime="20210404 04:57:00.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DROPDOWN_LIST_OFFICE']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:00.940" endtime="20210404 04:57:01.214"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DROPDOWN_LIST_OFFICE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.215" level="INFO">Clicking element 'css:#officeId_chosen .chosen-single'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.214" endtime="20210404 04:57:01.260"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${VALID_INPUT_CLIENT_INFO['DROPDOWN_SELECTED_OFFICE']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:01.260" endtime="20210404 04:57:01.278"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${VALID_INPUT_CLIENT_INFO['DROPDOWN_SELECTED_OFFICE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.279" level="INFO">Clicking element 'xpath://ul[contains(@class, 'chosen-results')]/li[text()='Head Office']'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.278" endtime="20210404 04:57:01.312"/>
+</kw>
+<kw name="Select From List By Label" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DROPDOWN_LIST_LEGAL_FORM']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['LEGAL_FORM']}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210404 04:57:01.314" level="INFO">Selecting options from selection list 'id:legalFormId' by label PERSON.</msg>
+<status status="PASS" starttime="20210404 04:57:01.312" endtime="20210404 04:57:01.377"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXTBOX_FIRSTNAME']}</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.379" level="INFO">Typing text 'Rekyn' into text field 'id:firstname'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.378" endtime="20210404 04:57:01.481"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXTBOX_MIDDLENAME']}</arg>
+<arg>${mname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.482" level="INFO">Typing text 'Yodel' into text field 'id:middlename'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.481" endtime="20210404 04:57:01.573"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXTBOX_LASTNAME']}</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.574" level="INFO">Typing text 'Gnik' into text field 'id:lastname'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.573" endtime="20210404 04:57:01.663"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXTBOX_MOBILE']}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.665" level="INFO">Typing text '52686739140' into text field 'id:mobileNo'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.664" endtime="20210404 04:57:01.760"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_DATE_OF_BIRTH']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.761" level="INFO">Clicking element 'id:dateofbirth'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.761" endtime="20210404 04:57:01.810"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_DATE_OF_BIRTH']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['DATE_OF_BIRTH']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:01.812" level="INFO">Typing text '29 March 1991' into text field 'id:dateofbirth'.</msg>
+<status status="PASS" starttime="20210404 04:57:01.811" endtime="20210404 04:57:02.027"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXT_MOBILE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.028" level="INFO">Clicking element 'xpath://fieldset/div[@class='form-group']/label[@for='mobileNo']'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.027" endtime="20210404 04:57:02.075"/>
+</kw>
+<kw name="Select Checkbox" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['CHECKBOX_ACTIVE']}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.077" level="INFO">Selecting checkbox 'id:activeCheckbox'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.076" endtime="20210404 04:57:02.150"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_ACTIVATION_DATE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.152" level="INFO">Clicking element 'id:activationDate'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.151" endtime="20210404 04:57:02.217"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_ACTIVATION_DATE']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['DEFAULT_DATE']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.219" level="INFO">Typing text '2 April 2021' into text field 'id:activationDate'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.217" endtime="20210404 04:57:02.458"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXT_MOBILE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.460" level="INFO">Clicking element 'xpath://fieldset/div[@class='form-group']/label[@for='mobileNo']'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.459" endtime="20210404 04:57:02.497"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_SUBMITTED_ON']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.499" level="INFO">Clicking element 'id:submittedon'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.497" endtime="20210404 04:57:02.564"/>
+</kw>
+<kw name="Input Text" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DATEPICKER_SUBMITTED_ON']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['DEFAULT_DATE']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.566" level="INFO">Typing text '2 April 2021' into text field 'id:submittedon'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.564" endtime="20210404 04:57:02.801"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['TEXT_MOBILE']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.802" level="INFO">Clicking element 'xpath://fieldset/div[@class='form-group']/label[@for='mobileNo']'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.801" endtime="20210404 04:57:02.833"/>
+</kw>
+<kw name="Select Checkbox" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['CHECKBOX_OPEN_SAVINGS']}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.834" level="INFO">Selecting checkbox 'id:opensavingsproduct'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.833" endtime="20210404 04:57:02.891"/>
+</kw>
+<kw name="Select From List By Label" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['DROPDOWN_LIST_SAVINGS_PRODUCT']}</arg>
+<arg>${VALID_INPUT_CLIENT_INFO['SAVINGS_PRODUCT']}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210404 04:57:02.893" level="INFO">Selecting options from selection list 'id:savingsProductId' by label SA.</msg>
+<status status="PASS" starttime="20210404 04:57:02.891" endtime="20210404 04:57:02.956"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['BUTTON_SUBMIT']}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210404 04:57:02.956" endtime="20210404 04:57:02.977"/>
+</kw>
+<kw name="Click Element" library="SELLIB">
+<arg>${PAGE_CREATE_CLIENT['BUTTON_SUBMIT']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210404 04:57:02.978" level="INFO">Clicking element 'id:save'.</msg>
+<status status="PASS" starttime="20210404 04:57:02.977" endtime="20210404 04:57:03.020"/>
+</kw>
+<status status="PASS" starttime="20210404 04:57:00.586" endtime="20210404 04:57:03.020"/>
+</kw>
+<kw name="Wait Until Location Contains" library="SELLIB">
+<arg>${expected_url}</arg>
+<arg>${MAX_TIMEOUT}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" starttime="20210404 04:57:03.021" endtime="20210404 04:57:03.233"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SELLIB">
+<arg>${expected_display[0]}</arg>
+<arg>${MAX_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210404 04:57:03.233" endtime="20210404 04:57:03.486"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SELLIB">
+<arg>${expected_display[0]}</arg>
+<arg>${expected_display[1]}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210404 04:57:03.487" endtime="20210404 04:57:03.535"/>
+</kw>
+<status status="PASS" starttime="20210404 04:56:50.950" endtime="20210404 04:57:03.535"/>
+</kw>
+<kw name="Close Browser" library="SELLIB" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210404 04:57:03.535" endtime="20210404 04:57:03.624"/>
+</kw>
+<tag>valid-client-creation</tag>
+<status status="PASS" starttime="20210404 04:56:50.950" endtime="20210404 04:57:03.624"/>
+</test>
+<status status="PASS" starttime="20210404 04:56:50.791" endtime="20210404 04:57:03.625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">valid-client-creation</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CLIENT">CLIENT</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

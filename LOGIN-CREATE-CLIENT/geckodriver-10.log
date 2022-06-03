@@ -1,0 +1,15 @@
+1617466494628	geckodriver	INFO	Listening on 127.0.0.1:49607
+1617466495642	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5c/jv_3vcz95fxcd9r74hhmfxzwnk7d8g/T/rust_mozprofileITELk3"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617466497514	Marionette	INFO	Listening on port 49618
+1617466497594	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://test.qe-360.com:8443/community-app/scripts/modules/notificationWidget.js, line 89: unreachable code after return statement
+JavaScript error: https://test.qe-360.com:8443/community-app/bower_components/requirejs/require.js, line 168: Error: Script error for "controllers/controllers.39a37334"
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript warning: https://test.qe-360.com:8443/community-app/scripts/modules/notificationWidget.js, line 89: unreachable code after return statement
+1617466519041	Marionette	INFO	Stopped listening on port 49618
+JavaScript error: https://test.qe-360.com:8443/community-app/bower_components/requirejs/require.js, line 168: Error: Script error for "controllers/controllers.39a37334"
+http://requirejs.org/docs/errors.html#scripterror
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
